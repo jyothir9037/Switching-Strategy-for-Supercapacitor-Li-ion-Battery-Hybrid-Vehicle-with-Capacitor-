@@ -1,0 +1,7 @@
+print("\033[1;31m red")
+print("\033[1;34m blue")
+print("\033[1;36m cyan")
+print("\033[0;32m green ")
+print("\033[0;0m reset")
+print("\033[;1m bold")
+print("\033[;7m reverse")

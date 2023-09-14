@@ -1,0 +1,46 @@
+lat[]
+[40.712680000000006,
+ 40.037220000000005,
+ 37.68934,
+ 35.123020000000004,
+ 35.215210000000006]
+
+lng[]
+[-74.00658, -81.42864, -92.63378, -103.24785000000001, -111.58768]
+
+elv[]
+[13.4994592666626,
+ 293.1217041015625,
+ 374.8125,
+ 1224.585327148438,
+ 2068.4765625]
+ 
+gradient[]
+[279.6222448348999, 81.6907958984375, 849.772827148438, 843.891235351562]
+
+###########################
+
+#getRouteMatrix()
+#elevation = getElevationVector(37.788022,-122.399797,API_KEY)
+#print(elevation)
+
+origin = 'New York, NY'
+destination = 'Los Angeles, CA'
+num_intermediate_points = 5
+
+num_intermediate_points = getDistance(origin, destination, API_KEY)
+
+elv = []
+
+lat, lng = getRouteMatrix(origin, destination, num_intermediate_points, API_KEY)
+for i in range(0, len(lat)):
+    elv.append(getElevationVector(lat[i], lng[i], API_KEY))
+    
+elv = [13.4994592666626,
+ 293.1217041015625,
+ 374.8125,
+ 1224.585327148438,
+ 2068.4765625]
+print(getGradient(elv))
+    
+###########################
